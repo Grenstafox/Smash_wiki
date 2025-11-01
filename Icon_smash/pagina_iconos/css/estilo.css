@@ -1,0 +1,315 @@
+@font-face {
+  font-family: 'MatisseProUB';
+  src: url('../fonts/FOT-Matisse_Pro_UB.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SerpentineRegular';
+  src: url('../fonts/Serpentine\ Becker\ Regular.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'serpentineBold';
+  src: url('../fonts/serpentineBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+ 
+#smash{
+    width: 6%;
+    margin-right: 10px;
+}
+ 
+#logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+ 
+#nombre{
+    font-family: 'MatisseProUB', sans-serif;
+    font-size: 135%;
+    color: black;
+    white-space: nowrap;
+}
+ 
+#header_principal{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+ 
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+ 
+nav li a {
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    color: black;
+    font-weight: bold;
+    padding: 8px 12px;
+    font-size: 100%;
+    border-radius: 4px;
+    font-family: 'MatisseProUB', sans-serif;
+}
+ 
+#imagen_principal{
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#busqueda_info{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    top: 70%;
+    width: 80%;
+    max-width: 900px;
+}
+
+#cuadro_busqueda{
+    font-family: 'MatisseProUB', sans-serif;
+    font-size: 150%;
+    position: relative;
+    top: auto;
+    background-color: aliceblue;
+    width:50%;
+    height: 150px;
+    border-radius: 10px 0px 0px 10px;
+    color: black;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px black;
+}
+ 
+#container_info{
+    position: relative;
+    background-color: black;
+    height: 25%;
+    bottom: 15px;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#box_text{
+    position: relative;
+    width: 15%;
+    height: 150px;
+    background-color: black;
+    box-shadow: 0 0 15px black;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#box_text img{
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+}
+
+
+
+#letrero_info img{
+    width: 100%;
+    max-width: 100%;
+    background-size: cover;
+}
+ 
+#img_presentacion{
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+}
+ 
+#img_title{
+    top: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50%;
+    width: auto;
+    height: auto;
+}
+ 
+#info_pagina{
+    max-width: 50%;
+    bottom: 40%;
+    transform: translateX(60%);
+    width: auto;
+    height: auto;
+}
+
+#info_letter{
+    font-family: 'SerpentineRegular', sans-serif;
+    background-image: url(../img/cuadro_con_patron.png);
+    font-size: 80px;
+    text-align: center;
+    color: aliceblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#shape_find{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#finder{
+    flex-direction: row;
+    position: absolute;
+    clip-path: polygon(
+        0% 0%,
+        0% 0%,
+        100% 0%,
+        95% 100%,
+        5% 100%
+    );
+    text-align: center;
+    background-color: rgb(29, 29, 29);
+    width: 65%;
+    height: 70px;
+}
+
+#design_input{
+    display: flex;
+    justify-content: center;
+}
+
+fieldset{
+    margin-top: 20px;
+    border: 1px solid rgb(29, 29, 29);
+}
+
+#search{
+    text-align: center;
+    width: 70%;
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.box_card{
+    width: 40px;
+    height: 30px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search_icon{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/lupa_gris.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#shape1{
+    background-color: rgb(29, 29, 29);
+    width: 100%;
+    height: 50px;
+}
+
+#card_place{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 900px;
+    padding: 100px;
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: 275px;
+    height: 275px;
+    border-radius: 0px 10px 0px 10px;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0 0 20px rgb(29, 29, 29);
+}
+
+#container img{
+    cursor: pointer;
+    width: 225px;
+    height: 225px;
+}
+
+.side1{
+    position: absolute;
+    clip-path: polygon(
+        0% 0%,
+        0% 0%,
+        100% 0%,
+        0% 50%,
+        0% 50%
+    );
+    height: 275px;
+    width: 50px;
+    margin-left: -225px;
+    background-color: rgb(66, 66, 66);
+}
+
+.side2{
+    position: absolute;
+    clip-path: polygon(
+        0% 0%,
+        0% 100%,
+        100% 50%,
+        100% 100%,
+        0% 100%
+    );
+    height: 275px;
+    width: 50px;
+    margin-right: -225px;
+    background-color: rgb(66, 66, 66);
+}
+
+footer{
+    background: #000;
+    width: 100%;
+    height: 200px;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/info.css">
+</head>
+<body>
+    <header id="header_principal">
+        <a id="logo" href="#">
+            <img id="smash" src="img/smash_finder.png" alt=""/>
+            <span id="nombre">SMASH BROS FINDER</span>
+        </a>
+       
+        <nav>
+            <ul>         
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Iniciar Sesion</a></li>
+                <li><a href="#">Favoritos</a></li>
+            </ul>
+        </nav>
+    </header>
+        <div id="letrero_info">
+            <div id="info_title">
+                Informacion del personaje
+            </div>
+        </div>
+        <div class="box_character">
+            <div class="card">
+                    <div class="character">
+                        <img class="smash_character" src="img/Smash_Ball.png" alt="">
+                        <div class="number_character">#</div>
+                        <div class="favorite_character">
+                            <img onclick="list_favorite()" src="img/favoritos.png" alt="">
+                        </div>
+                    </div>
+                    <div class="name_character">NAME</div>
+                <div id="box_coment">
+                    <img src="img/corazon.png" alt="">
+                    <div id="img_coment">
+                        <img id="comentar_personaje" onclick="comentary_character()" src="img/coment.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="container_info">
+                <div class="decoration_top">Character Origins</div>
+
+                <div class="scroll_character">
+                    <p class="origin"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="letrero_info">
+            <div id="info_letter">
+                Set de Movimientos
+            </div>
+        </div>
+        <div id="container_move">
+            <div class="card_move">
+                <div id="favorite_move">
+                        <img class="favorite_icon_move" onclick="list_favorite()" src="img/favoritos_white.png" alt="">
+                </div>
+
+                <div class="move">
+                    <img class="gif_move" src="img/Smash_Ball.png" alt="">    
+                </div>
+                
+                <div id="box_coment_move">
+                    <img id="like" src="img/corazon.png" alt="">
+                    <div id="img_coment">
+                        <img id="comentar_movimiento" onclick="comentary_move()" src="img/coment.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="letrero_info">
+            <div id="info_letter">
+                Mapas
+            </div>
+        </div>
+        <div id="content_stage">
+            <div id="margin_stage">
+                <div class="container_stage">
+                    <img id="stage" src="img/Smash_Ball.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="container_comentary">
+            <div id="comentary">
+                <img class="gif_move_coment" src="" alt="">
+                   <div class="seccion_comentarios">
+                    <div class="Comentario">
+                        <div class="comentador">
+                            Comentario 1
+                        </div>
+                        <div class="comentario_texto">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit a maecenas natoque, at dictum habitant elementum phasellus consequat venenatis quam litora. Potenti cursus orci id quam hendrerit fringilla dui nostra ante tincidunt molestie, ac hac rhoncus felis cras tristique metus in lacus.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="new_comentary">
+                    <button class="button_coment"><img src="" alt=""></button>
+                    <div class="comentary">
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer id="footer">
+        <p></p>
+    </footer>
+</body>
+</html>
