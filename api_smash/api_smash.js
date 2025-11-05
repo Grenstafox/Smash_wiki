@@ -48,7 +48,7 @@ const server = http.createServer((request, response) => {
                 var id = request.url.replace("/obtener_personaje_", "");
                 const sql_personaje = "SELECT personaje_id, saga_id, nombre_personaje, numero_smash, link_personaje, info_origen FROM `personajes` WHERE personaje_id = ";
                 conexion_db.query(sql_personaje + id, (err, resultado) => {
-                    if (err || resultado.length == 0) {
+                    if (err) {
                         response.statusCode = 404;
                         response.end(JSON.stringify({
                             "mensaje": "Personaje no existe o error"
@@ -193,4 +193,5 @@ const server = http.createServer((request, response) => {
 
 server.listen(puerto, () => {
     console.log("Servidor a la escucha en http://localhost:" + puerto);
+
 });
