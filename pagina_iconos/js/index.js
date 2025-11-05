@@ -8,25 +8,26 @@ const card = saga_characters.querySelector(".card");
 function CargarTodasLasSagas() {
     fetch("http://localhost:3007/obtener_todas_las_sagas").then(recurso => recurso.json()).then(data => {
         if (!data.sagas) {
-            return;
+            return 0;
         }
-
-        for (let i = 0; i < data.sagas.length; i++) {
-            const saga = data.sagas[i];
-            const clon = container.cloneNode(true);
-            const iconImg = clon.querySelector("#icon");
-
-            iconImg.onclick = function () {
-                AbrirContainer(saga.saga_id);
-            };
-            const mimeType = 'image/jpeg';
-            const iconUrl = "data:" + mimeType + ";base64," + saga.link_icono;
-
-            if (iconImg && saga.link_icono) {
-                iconImg.src = iconUrl;
+        else{
+            for (let i = 0; i < data.sagas.length; i++) {
+                const saga = data.sagas[i];
+                const clon = container.cloneNode(true);
+                const iconImg = clon.querySelector("#icon");
+    
+                iconImg.onclick = function () {
+                    AbrirContainer(saga.saga_id);
+                };
+                const mimeType = 'image/jpeg';
+                const iconUrl = "data:" + mimeType + ";base64," + saga.link_icono;
+    
+                if (iconImg && saga.link_icono) {
+                    iconImg.src = iconUrl;
+                }
+    
+                card_place.appendChild(clon);
             }
-
-            card_place.appendChild(clon);
         }
     })
 }
@@ -104,4 +105,5 @@ function AbrirContainer(sagaId){
     } else {
         console.warn("Advertencia: AbrirContainer fue llamado sin un 'sagaId'. No se cargarán personajes.");
     }
+
 }
