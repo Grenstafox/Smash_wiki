@@ -2,7 +2,7 @@ const personajeId = sessionStorage.getItem("muro_objetivo");
 const smashCharacter = document.querySelector(".smash_character");
 const numberCharacter = document.querySelector(".number_character");
 const nameCharacter = document.querySelector(".name_character");
-const originP = document.querySelector(".origin");
+const origin_info = document.querySelector(".origin");
 const containerMove = document.querySelector("#container_move");
 const plantillaMove = document.querySelector(".card_move");
 const contentStage = document.querySelector("#content_stage");
@@ -35,12 +35,9 @@ fetch("http://localhost:3007/obtener_personaje_" + personajeId).then(recurso => 
                 numberCharacter.textContent = "#" + '?';
             }
         }
-        if (originP) {
-            originP.textContent = info_origen;
+        if (originInfo) {
+            originInfo.textContent = info_origen;
         }
-    CargarMapasDeSaga(personajeId);
-    CargarSetDeMovimientos(personajeId);
-    CargarFotosDePersonaje(personajeId);
 })
 
 
@@ -73,7 +70,7 @@ function CargarMapasDeSaga(idPersonaje) {
 
 function CargarFotosDePersonaje(idPersonaje) {
     fetch("http://localhost:3007/obtener_id_foto_" + idPersonaje).then(recurso => recurso.json()).then(data => {
-        if (!data.ids || data.ids.length == 0) {
+        if (!data.ids) {
             console.log("No hay IDs de fotos");
             return 0;
         }
@@ -82,7 +79,6 @@ function CargarFotosDePersonaje(idPersonaje) {
             const item = data.ids[i];
 
             fetch("http://localhost:3007/obtener_foto_con_id_" + item.foto_id).then(recurso => recurso.json()).then(imageData => {
-                const imageUrl = getObjectUrlFromData(imageData);
                 if (imageUrl) {
                     console.log("Foto ID " + item.foto_id + " cargada.");
                 } else {
@@ -91,4 +87,5 @@ function CargarFotosDePersonaje(idPersonaje) {
             });
         }
     });
+
 }
