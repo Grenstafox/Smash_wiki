@@ -1,6 +1,12 @@
 const http = require("node:http");
 const basedatos = require("mysql");
+const jwt = require("jsonwebtoken");
 const puerto = 3007;
+
+var usuario_nombre = "Fer";
+var usuario_contraseña = "3456";
+var usuario_frase = "Hola que tal...";
+
 const server = http.createServer((request, response) => {
 
     response.setHeader("Access-Control-Allow-Origin", "*");
@@ -179,7 +185,78 @@ const server = http.createServer((request, response) => {
             break;
 
         case "POST":
+            case "POST":
+            request.on("data", info => {
+                var login = JSON.parse(info.toString());
+                console.log(login);
 
+                if(login.nombre == usuario_nombre && login.contraseña == usuario_contraseña){
+
+                    const token = jwt.sign({username: usuario_nombre}, llave_secreta_para_jwt, {expiresIn: "30s"});
+
+                    response.statusCode = 200;
+                    response.setHeader("Content-Type", "application/json");
+                    response.end(JSON.stringify({
+                        "mensaje": "La informacion es correcta",
+                        "token_access": token
+                    }));
+                }
+                else{
+                    response.statusCode = 401;
+                    response.setHeader("Content-Type", "application/json");
+                    response.end(JSON.stringify({
+                        "mensaje": "Usuario y contraseña incorrectos"
+                    }));
+                }
+            })
+        break;
+        case "PUT":
+            var authHeader = request.headers['authorization'];
+
+            if(authHeader == null || !authHeader  || authHeader == "null"){
+                response.statusCode = 401;
+                response.setHeader("Content-Type", "application/json");
+                response.end(JSON.stringify({
+                    "mensaje": "Token no proporcionado"
+                }));
+
+                return 0;
+            }
+
+            jwt.verify(authHeader, llave_secreta_para_jwt, (err, decoded) => {
+                if(err){
+                    response.statusCode = 401;
+                    response.setHeader("Content-Type", "application/json");
+                    response.end(JSON.stringify({
+                    "mensaje": "Sesion vencida, Vuelve a iniciar sesion"
+                    }));
+                    return 0;
+                }
+
+                if(decoded.username == usuario_nombre){
+                        request.on("data", info => {
+                        const objeto_nueva_frase = JSON.parse(info.toString());
+                        usuario_frase = objeto_nueva_frase.nueva_frase;
+
+                        response.statusCode = 200;
+                        response.setHeader("Content-Type", "application/json");
+                        response.end(JSON.stringify({
+                        "mensaje": "La frase ha sido actualizada",
+                        "nueva_frase": usuario_frase
+                        }));
+                    });
+                }
+                
+                /*
+                response.statusCode = 200;
+                response.setHeader("Content-Type", "application/json");
+                response.end(JSON.stringify({
+                    "mensaje": "Usuario y contraseña correctos",
+                    "usuario": decoded,
+                    "frase": usuario_frase
+                }));*/
+
+            });
             break;
         case "PUT":
 
@@ -195,3 +272,4 @@ server.listen(puerto, () => {
     console.log("Servidor a la escucha en http://localhost:" + puerto);
 
 });
+
