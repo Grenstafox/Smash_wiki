@@ -53,41 +53,44 @@
                 <div id="shape1"></div>
             </div>
         </div>
-
-        <div id="card_place">
-            <div id="container">
-                <img id="icon" src="img/favoritos.png" onclick="AbirContainer()" alt="">
-                <div class="side1"></div>
-                <div class="side2"></div>
+        <div id="container_card">
+            <div id="card_place">
+                <div id="card_icon">
+                    <img src="img/favoritos.png" onclick="AbirContainer()" alt="">
+                    <div class="side1"></div>
+                    <div class="side2"></div>
+                </div>
             </div>
-        </div>
 
-        <div id="container_saga">
+            <div id="container_saga">
             <div id="icon_saga"><img id="saga_icon" src="" alt=""></div>
             <div class="side"></div>
             <div id="saga_characters">
-                <button onclick="CerrarContainer()">X</button>
+                <button></button>
                 <div class="card">
                     <div class="character">
-                        <img class="smash_character" src="img/Smash_Ball.png" alt="">
-                        <div class="number_character">#</div>
-                        <div class="favorite_character">
-                            <img onclick="list_favorite()" src="img/favoritos.png" alt="">
-                        </div>
+                            <img class="smash_character" src="img/Smash_Ball.png" alt="">
+                            <div class="number_character">#</div>
+                            <div class="favorite_character">
+                                <img onclick="list_favorite()" src="img/favoritos.png" alt="">
+                            </div>
                     </div>
                     <div class="name_character">NAME</div>
-                    <div id="box_coment">
-                        <img src="img/corazon.png" alt="">
-                        <div id="img_coment">
-                            <img id="comentar_personaje" onclick="comentary_character()" src="img/coment.png" alt="">
+                        <div id="box_coment">
+                            <img src="img/corazon.png" alt="">
+                            <div id="img_coment">
+                                <img id="comentar_personaje" onclick="comentary_character()" src="img/coment.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
     <footer>
         <p></p>
     </footer>
 </body>
-<script src="js/index.js"></script>
+<script src="js/iconos.js"></script>
 </html>
