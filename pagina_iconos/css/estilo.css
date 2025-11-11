@@ -247,14 +247,9 @@ fieldset{
 }
 
 #card_place{
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    width: auto;
     height: 900px;
     padding: 100px;
-    background-image: url(../img/background.png);
     background-size: cover;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -309,7 +304,7 @@ fieldset{
 }
 
 #container_saga{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 600px;
@@ -368,6 +363,16 @@ fieldset{
     background-color: aliceblue;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 0 20px black;
+}
+
+#container_card{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .character{
