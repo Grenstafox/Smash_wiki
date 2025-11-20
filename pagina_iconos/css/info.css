@@ -337,6 +337,118 @@ nav li a {
 
 
 
+#page-wrapper {
+    padding-top: 20px;
+    display: none; 
+}
+
+#container_comentary {
+    width: 350px;
+    height: auto;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 248, 255); 
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+}
+
+.back {
+    background-color: rgb(30, 156, 30); 
+    width: 20%; 
+    height: 40px;
+    display: flex;
+    float: left;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.back img {
+    width: 30px; 
+    height: 30px;
+}
+
+.gif_move_coment {
+    width: 100%;
+    max-width: 340px; 
+    height: 325px; 
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin: 5px 0 15px 0; 
+    overflow: hidden;
+}
+
+.gif_move_coment img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+
+.lista_comentarios_publicados {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+    padding: 0 5px; 
+}
+
+.comentario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 330px; 
+    background-color: #e0e0e0; 
+    border-radius: 5px;
+    padding: 8px 0 8px 10px;
+    margin: 2px auto;
+    height: 15px; 
+    overflow: hidden;
+}
+
+.texto-comentario {
+    flex-grow: 1; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+    font-size: 14px;
+}
+
+.accion-comentario {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0 10px; 
+    height: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 15px; 
+    margin-left: 10px;
+}
+
+
+
+.seccion_nuevo_comentario {
+    width: 100%;
+    padding: 10px;
+    background-color: #c7a400; 
+    margin-top: 10px;
+}
+
+.input-nuevo-comentario {
+    background-color: #6d5b0c;
+    width: calc(100% - 20px); 
+    padding: 8px;
+    border: 1px solid #9c7f00;
+    border-radius: 5px;
+    font-size: 14px;
+    color: aliceblue;
+}
+
 /*--*/
 
 footer{
